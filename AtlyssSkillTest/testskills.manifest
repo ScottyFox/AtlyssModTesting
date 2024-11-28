@@ -1,0 +1,44 @@
+ManifestFileVersion: 0
+CRC: 3050545335
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 39599822dc6415eef066521c43a2268f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 47efe54367edc6067ee5c55950ed8e4a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5e016cc16c78cd13e2b9b97760b11e4a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 98216b1522779d054844145add846d5d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 20f716a9b0b1a6c7613162772d571a4b, type: 3}
+- Class: 114
+  Script: {fileID: -405604723, guid: 96c049b35fb05334c880b50a5ec77a59, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: ConditionSlot
+- AssemblyName: Assembly-CSharp
+  ClassName: SkillObjectSlot
+- AssemblyName: Assembly-CSharp
+  ClassName: SkillParameters
+- AssemblyName: Assembly-CSharp
+  ClassName: SkillRanking
+Assets:
+- Assets/CustomItems/skill/skill_shareitem.asset
+- Assets/CustomItems/skill/_skillObject_shareitem.prefab
+- Assets/CustomItems/item/(lv-1) SKILLSCROLL_Skill Scroll (Share Items).asset
+- Assets/CustomItems/skill/shareitem_icon.png
+Dependencies: []
