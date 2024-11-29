@@ -13,16 +13,16 @@
             switch (player_count)
             {
                 case 2:
-                    percentage = 0.85f;
+                    percentage = 0.95f;
                     break;
                 case 3:
-                    percentage = 0.65f;
+                    percentage = 0.85f;
                     break;
                 case 4:
-                    percentage = 0.45f;
+                    percentage = 0.65f;
                     break;
                 case 5:
-                    percentage = 0.35f;
+                    percentage = 0.55f;
                     break;
             }
             if(object.Equals(stats, default(StatStruct)))

@@ -16,7 +16,7 @@ namespace ClassSkillUniversal
             {
                 foreach (var skill in player_class._classSkills)
                 {
-                    AtlyssUtils.Convert_To_Bonus_Skill(skill);
+                    skill._allowAsBonusSkill = true;
                     var skill_scroll = AtlyssUtils.Convert_Skill_To_Scroll_Item(skill);
                     AtlyssUtils.Add_Item(skill_scroll);
                     AtlyssUtils.Register_Item_To_Shopkeeper("Sally's Store", skill_scroll);

@@ -52,7 +52,6 @@
 
   <ItemGroup>
     <Folder Include="Build\" />
-    <Folder Include="custom\registry\" />
   </ItemGroup>
 
   <PropertyGroup>
