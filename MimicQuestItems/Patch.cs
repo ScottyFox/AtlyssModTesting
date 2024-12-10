@@ -34,8 +34,9 @@ namespace AtlyssSkillTest
                 var item_required = quest_requirements[i]._itemsNeeded;
                 if (quest_progress[i] == item_required)
                     continue;
+                var player_item_count = Count_Item_In_PlayerInventory(GetPlayerInventory_PlayerQuesting(__instance), item_name);
                 var storage_item_count = Find_Item_In_ItemStorage(item_name);
-                var actual_item_count = quest_progress[i] + storage_item_count;
+                var actual_item_count = player_item_count + storage_item_count;
                 if (actual_item_count > item_required)
                     actual_item_count = item_required;
                 __instance._questProgressData[_index]._itemProgressValues[i] = actual_item_count;

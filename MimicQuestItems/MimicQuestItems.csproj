@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <AssemblyName>MimicQuestItems</AssemblyName>
-    <Description>MimicQuestItems</Description>
-    <Version>0.0.0</Version>
+    <AssemblyName>SpikeQuestItems</AssemblyName>
+    <Description>SpikeQuestItems</Description>
+    <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
@@ -28,11 +28,10 @@
 
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.Core" Version="5.*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.Core" Version="5.4.21" IncludeAssets="compile" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" IncludeAssets="compile" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" IncludeAssets="compile" />
     <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" IncludeAssets="compile" />
-    <PackageReference Include="HarmonyX" Version="2.13.0" IncludeAssets="compile" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,8 +62,8 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(ProjDir)Build&quot; &#xD;&#xA;" />
-    <Exec Command="copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(CWPlugin)&quot; &#xD;&#xA;" />
+    <Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;$(ProjDir)Build&quot; &#xD;&#xA;" />
+    <Exec Command="copy /Y &quot;$(TargetDir)$(AssemblyName).dll&quot; &quot;$(CWPlugin)&quot; &#xD;&#xA;" />
   </Target>
 
 </Project>

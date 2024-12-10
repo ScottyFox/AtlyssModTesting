@@ -2,14 +2,14 @@
 using HarmonyLib;
 using System;
 using System.Reflection;
-namespace MimicQuestItems
+namespace SpikeQuestItems
 {
     public static class PluginInfo
     {
-        public const string GUID = "MimicQuestItems";
-        public const string NAME = "MimicQuestItems";
-        public const string VERSION = "0.0.0";
-        public const string WEBSITE = "";
+        public const string GUID = "scottyfoxart.atlyss.spikequestitems";
+        public const string NAME = "Spike Quest Items";
+        public const string VERSION = "1.0.0";
+        public const string WEBSITE = "https://github.com/ScottyFox/AtlyssModTesting/tree/main/MimicQuestItems";
     }
     [BepInPlugin(PluginInfo.GUID, PluginInfo.NAME, PluginInfo.VERSION)]
     public class Plugin : BaseUnityPlugin
