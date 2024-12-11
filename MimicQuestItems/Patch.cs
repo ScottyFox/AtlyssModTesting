@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Text.RegularExpressions;
 namespace AtlyssSkillTest
 {
     [HarmonyPatch]
@@ -42,6 +44,25 @@ namespace AtlyssSkillTest
                 __instance._questProgressData[_index]._itemProgressValues[i] = actual_item_count;
             }
         }
+        public const string QuestProgressNote_ItemProgress_Pattern = @"^(?<Itemname>.+?): \((?<A>\d+) \/ (?<B>\d+)\)$";
+        [HarmonyPatch(typeof(PlayerQuesting), "Apply_QuestProgressNote")]
+        [HarmonyPrefix]
+        static void Apply_QuestProgressNote_Prefix_Patch(ref PlayerQuesting __instance, ref string _string)
+        {
+            Match match = Regex.Match(_string, QuestProgressNote_ItemProgress_Pattern);
+            if (!match.Success)
+                return;
+            string itemName = match.Groups["Itemname"].Value;
+            int totalCount = Count_Total_Items_In_Player_And_ItemStorage(GetPlayerInventory_PlayerQuesting(__instance),itemName);
+            int currentCount = int.Parse(match.Groups["A"].Value);
+            int requiredCount = int.Parse(match.Groups["B"].Value);
+            if (currentCount >= totalCount)
+                return;
+            currentCount = totalCount;
+            if (currentCount > requiredCount)
+                currentCount = requiredCount;
+            _string = $"{itemName}: ({currentCount} / {requiredCount})*";
+        }
         static void ItemStorage_Load()
         {
             if (!ItemStorageManager._current._isOpen)
@@ -75,6 +96,12 @@ namespace AtlyssSkillTest
         static int Count_Item_In_PlayerInventory(PlayerInventory inventory, string itemName)
         {
             return Count_Item_In_ItemDatas(inventory._heldItems, itemName);
+        }
+        static int Count_Total_Items_In_Player_And_ItemStorage(PlayerInventory inventory, string itemName)
+        {
+            var player_item_count = Count_Item_In_PlayerInventory(inventory, itemName);
+            var storage_item_count = Find_Item_In_ItemStorage(itemName);
+            return player_item_count + storage_item_count;
         }
         static void Remove_Item_In_ItemStorage(string itemName, int remove_count)
         {
