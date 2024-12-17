@@ -8,7 +8,7 @@ namespace SpikeQuestItems
     {
         public const string GUID = "scottyfoxart.atlyss.spikequestitems";
         public const string NAME = "Spike Quest Items";
-        public const string VERSION = "1.0.0";
+        public const string VERSION = "1.0.2";
         public const string WEBSITE = "https://github.com/ScottyFox/AtlyssModTesting/tree/main/MimicQuestItems";
     }
     [BepInPlugin(PluginInfo.GUID, PluginInfo.NAME, PluginInfo.VERSION)]
