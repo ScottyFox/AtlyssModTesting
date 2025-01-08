@@ -10,10 +10,10 @@ namespace AtlyssSkillTest
         static void Cache_ScriptableAssets_Postfix_Patch(ref GameManager __instance)
         {
             var shareitems_skill = Assets.MainAssetBundle.LoadAsset<ScriptableSkill>("skill_shareitem");
-            var shareitems_scroll = AtlyssUtils.Convert_Skill_To_Scroll_Item(shareitems_skill);
+            var shareitems_scroll = ItemUtils.Convert_Skill_To_SkillScroll(shareitems_skill);
             AtlyssUtils.Add_Skill(shareitems_skill);
             AtlyssUtils.Add_Item(shareitems_scroll);
-            AtlyssUtils.Register_Item_To_Shopkeeper("Sally's Store", shareitems_scroll);
+            ShopkeepUtils.Register_Shopkeep_Item("Sally's Store", shareitems_scroll);
         }
     }
 }

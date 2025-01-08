@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <AssemblyName>ClassSkillUniversal</AssemblyName>
-    <Description>ClassSkillUniversal</Description>
+    <AssemblyName>AtlyssUnityBundleLoader</AssemblyName>
+    <Description>A Library for Bundling Assets for Atlyss</Description>
     <Version>0.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
-    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
     <GameDataPath>C:\Program Files (x86)\Steam\steamapps\common\ATLYSS\ATLYSS_Data</GameDataPath>
   </PropertyGroup>
 
@@ -19,21 +19,22 @@
     <ReferencePath>$(ReferencePath);$(GameDataPath)\Managed</ReferencePath>
     <ReferencePath>$(ReferencePath);$(GameDataPath)\Plugins</ReferencePath>
     <ReferencePath>$(ReferencePath);$(GameDataPath)\..\BepinEx\plugins</ReferencePath>
-    <RootNamespace>AtlyssSkillTest</RootNamespace>
+    <RootNamespace>AtlyssUnityBundleLoader</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.4.21" IncludeAssets="compile" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" IncludeAssets="compile" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" IncludeAssets="compile" />
     <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" IncludeAssets="compile" />
-    <PackageReference Include="HarmonyX" Version="2.13.0" IncludeAssets="compile" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
+    <Reference Include="Assembly-CSharp" Publicize="true">
       <HintPath>$(GameDataPath)\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>$(GameDataPath)\Managed\Unity.TextMeshPro.dll</HintPath>
@@ -47,10 +48,14 @@
     <Reference Include="AtlyssHelperUtils">
       <HintPath>$(ProjDir)..\AtlyssHelperUtils\Build\AtlyssHelperUtils.dll</HintPath>
     </Reference>
+    <Reference Include="UCustomBundlerAPI">
+      <HintPath>$(ProjDir)..\UCustomBundlerAPI\Build\UCustomBundlerAPI.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>

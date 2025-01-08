@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlyssObserver", "AtlyssObs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MimicQuestItems", "MimicQuestItems\MimicQuestItems.csproj", "{F243FD7A-FDF9-42FE-BD8D-AED1108DB61C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtlyssUnityBundleLoader", "AtlyssUnityBundleLoader\AtlyssUnityBundleLoader.csproj", "{9CF4A22D-DF23-4E73-98FF-40697EE220E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCustomBundlerAPI", "UCustomBundlerAPI\UCustomBundlerAPI.csproj", "{E780434E-9236-4AE4-9DF8-71D6D2470000}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{F243FD7A-FDF9-42FE-BD8D-AED1108DB61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F243FD7A-FDF9-42FE-BD8D-AED1108DB61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F243FD7A-FDF9-42FE-BD8D-AED1108DB61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF4A22D-DF23-4E73-98FF-40697EE220E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF4A22D-DF23-4E73-98FF-40697EE220E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF4A22D-DF23-4E73-98FF-40697EE220E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF4A22D-DF23-4E73-98FF-40697EE220E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E780434E-9236-4AE4-9DF8-71D6D2470000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E780434E-9236-4AE4-9DF8-71D6D2470000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E780434E-9236-4AE4-9DF8-71D6D2470000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E780434E-9236-4AE4-9DF8-71D6D2470000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

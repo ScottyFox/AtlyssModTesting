@@ -1,19 +1,18 @@
-﻿using BepInEx;
-using BepInEx.Configuration;
+﻿
+using BepInEx;
 using HarmonyLib;
 using System;
 using System.Reflection;
-namespace AtlyssHelperUtils
+namespace AtlyssBundler
 {
     public static class PluginInfo
     {
-        public const string GUID = "AtlyssHelperUtils";
-        public const string NAME = "AtlyssHelperUtils";
+        public const string GUID = "AtlyssBundler";
+        public const string NAME = "AtlyssBundler";
         public const string VERSION = "0.0.0";
         public const string WEBSITE = "";
     }
     [BepInPlugin(PluginInfo.GUID, PluginInfo.NAME, PluginInfo.VERSION)]
-    [HarmonyBefore()]
     public class Plugin : BaseUnityPlugin
     {
         internal static Harmony instance = new(PluginInfo.GUID);

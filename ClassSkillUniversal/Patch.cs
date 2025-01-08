@@ -9,7 +9,6 @@ namespace ClassSkillUniversal
         [HarmonyPostfix]
         static void Cache_ScriptableAssets_Postfix_Patch(ref GameManager __instance)
         {
-            AtlyssUtils.Clear_Custom_Shopkeeper_Items();
             var Skills = AtlyssUtils.GetSkills(__instance);
             var Classes = AtlyssUtils.GetPlayerClasses(__instance);
             foreach (var player_class in Classes.Values)
@@ -17,9 +16,9 @@ namespace ClassSkillUniversal
                 foreach (var skill in player_class._classSkills)
                 {
                     skill._allowAsBonusSkill = true;
-                    var skill_scroll = AtlyssUtils.Convert_Skill_To_Scroll_Item(skill);
+                    var skill_scroll = ItemUtils.Convert_Skill_To_SkillScroll(skill);
                     AtlyssUtils.Add_Item(skill_scroll);
-                    AtlyssUtils.Register_Item_To_Shopkeeper("Sally's Store", skill_scroll);
+                    ShopkeepUtils.Register_Shopkeep_Item("Sally's Store", skill_scroll);
                 }
             }
         }
